@@ -2,6 +2,8 @@ package emailapp;
 
 import java.util.Scanner;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 public class Email {
 	private String firstName;
 	private String lastName;
@@ -9,7 +11,7 @@ public class Email {
 	private int defaultpasswordLength=10;
 	private String department;
 	private String email;
-	private int mailboxCapacity;
+	private int mailboxCapacity = 500;
 	private String alternateEmail;
 	private String companySuffix = "thcompany.com";
 	
@@ -59,9 +61,23 @@ public class Email {
 		}
 		return new String (password); //최종 length길이의 비밀번호를 반환
 	}
+	
 	//메일 용량 설정
+	public void setMailboxCapacity(int capacity) {
+		this.mailboxCapacity = capacity;
+	}
 	
 	//메일 주소 변경
+	public void setAlternateEmail(String altEmail) {
+		this.alternateEmail = altEmail;
+	}
 	
 	//비밀번호 변경
+	public void changePassword(String password) {
+		this.password = password;
+	}
+		
+	 public int getMailboxCapacity() {return mailboxCapacity;}
+	 public String getAlternateEmail() {return alternateEmail;}
+	 public String getPassword() {return password;}
 }
