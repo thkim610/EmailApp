@@ -8,8 +8,10 @@ public class Email {
 	private String password;
 	private int defaultpasswordLength=10;
 	private String department;
+	private String email;
 	private int mailboxCapacity;
 	private String alternateEmail;
+	private String companySuffix = "thcompany.com";
 	
 	//이름 반환
 	public Email(String firstName, String lastName) {
@@ -25,18 +27,22 @@ public class Email {
 		this.password = randomPassword(defaultpasswordLength);
 		System.out.println("비밀번호 : " + this.password);
 		
+		//이메일 주소 생성
+		email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
+		System.out.println("이메일 주소: " + email);
+		
 	}
 	//부서 묻기
 	private String setDepartment() {
-		System.out.println("*부서정보입력* \n1 직책\n2 직무\n3 이름\n0 없음 \n 부서코드를 입력하세요: ");
+		System.out.println("*부서정보입력* \n1 회계\n2 영업\n3 인사\n0 없음 \n 부서코드를 입력하세요: ");
 		Scanner in = new Scanner(System.in);
 		int depChoice = in.nextInt();
 		if(depChoice == 1) {
-			return "직책";
+			return "acct";
 		}else if(depChoice == 2) {
-			return "직무";
+			return "sales";
 		}else if(depChoice == 3) {
-			return "이름";
+			return "dev";
 		}else {
 			return "";
 		}
