@@ -19,11 +19,11 @@ public class Email {
 	public Email(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		System.out.println("E-MAIL CREATE: " + this.firstName + this.lastName);
+//		System.out.println("E-MAIL CREATE: " + this.firstName + this.lastName);
 		
 		//부서 반환
 		this.department = setDepartment(); 
-		System.out.println("Department: " + this.department);
+//		System.out.println("Department: " + this.department);
 		
 		//랜덤 비밀번호 생성 메서드
 		this.password = randomPassword(defaultpasswordLength);
@@ -31,7 +31,7 @@ public class Email {
 		
 		//이메일 주소 생성
 		email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
-		System.out.println("이메일 주소: " + email);
+//		System.out.println("이메일 주소: " + email);
 		
 	}
 	//부서 묻기
@@ -69,7 +69,7 @@ public class Email {
 	
 	//메일 주소 변경
 	public void setAlternateEmail(String altEmail) {
-		this.alternateEmail = altEmail;
+		this.email = altEmail;
 	}
 	
 	//비밀번호 변경
@@ -80,4 +80,10 @@ public class Email {
 	 public int getMailboxCapacity() {return mailboxCapacity;}
 	 public String getAlternateEmail() {return alternateEmail;}
 	 public String getPassword() {return password;}
+	 
+	 public String showInfo() {
+		 return "DISPALY NAME: " + firstName + " " + lastName +
+				 "\nCOMPANY EMAIL: " + email +
+				 "\nMAILBOX CAPACITY: " + mailboxCapacity +"mb";
+	 }
 }
