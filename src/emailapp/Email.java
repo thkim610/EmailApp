@@ -69,13 +69,22 @@ public class Email {
 	
 	//메일 주소 변경
 	public void setAlternateEmail(String altEmail) {
-		this.email = altEmail;
+		this.alternateEmail = altEmail;
 	}
 	
 	//비밀번호 변경
 	public void changePassword(String password) {
 		this.password = password;
 	}
+	
+	//이메일 변경여부 확인
+	public void setEmail() {
+		System.out.println("이메일을 변경하시겠습니까? \n1.예 \n2.아니오");
+		Scanner sc = new Scanner(System.in);
+		int checkSetEmail = sc.nextInt();
+		if(checkSetEmail == 1) {
+		}
+		}
 		
 	 public int getMailboxCapacity() {return mailboxCapacity;}
 	 public String getAlternateEmail() {return alternateEmail;}
